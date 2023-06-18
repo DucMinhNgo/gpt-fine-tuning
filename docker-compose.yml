@@ -13,6 +13,18 @@ services:
     tty: true
     networks: 
       - nodejss
+  
+  client:
+    stdin_open: true
+    tty: true
+    build:
+      dockerfile: Dockerfile
+      context: ./client
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    ports:
+      - 4000:4000
 
 volumes:
   db:
