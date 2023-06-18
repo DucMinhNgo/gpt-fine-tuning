@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "018734ea-c2e9-451c-bed3-978709a5235b",
+		"name": "ChatGPT fine-turning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Heath Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Answer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"prompt\": \"What is Lens Protocol\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/create-completion?prompt=thuật toán aks là gì?&model=ada:ft-personal-2023-06-18-03-43-05",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"create-completion"
+					],
+					"query": [
+						{
+							"key": "prompt",
+							"value": "thuật toán aks là gì?"
+						},
+						{
+							"key": "model",
+							"value": "ada:ft-personal-2023-06-18-03-43-05"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get List FineTurning",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"prompt\": \"What is Lens Protocol\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/get-list-fine-turning?id=ft-xjkJwoVD41N4z3fSCNHuMw6p",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"get-list-fine-turning"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "ft-xjkJwoVD41N4z3fSCNHuMw6p"
+						},
+						{
+							"key": "status",
+							"value": "succeeded",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "uploadData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/upload-data?url=https://storage.googleapis.com/hien7613storage2/Crawl_MatBaoWiki/cloud-server.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"upload-data"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://storage.googleapis.com/hien7613storage2/Crawl_MatBaoWiki/cloud-server.json"
+						},
+						{
+							"key": "json_file",
+							"value": "Crawl_MatBaoWiki_ten-mien.json",
+							"disabled": true
+						},
+						{
+							"key": "jsonl_name",
+							"value": "dustin.jsonl",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createFileTurning",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/create-fine-turning?fileId=file-Cxh5iLTcX4OWGnZG5S6sCVSA&model=ada",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"create-fine-turning"
+					],
+					"query": [
+						{
+							"key": "fileId",
+							"value": "file-Cxh5iLTcX4OWGnZG5S6sCVSA"
+						},
+						{
+							"key": "model",
+							"value": "ada"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
