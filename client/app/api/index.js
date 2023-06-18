@@ -15,7 +15,7 @@ export const createAnswer = ({ text, controller }) => {
 
   const data = {
     prompt: text,
-    model: 'ada:ft-personal-2023-06-18-03-43-05'
+    model: 'davinci:ft-personal-2023-06-13-16-57-57'
   };
 
   return axios.get(`http://localhost:3000/create-completion?${parseParams(data)}`);;
