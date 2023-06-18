@@ -1,4 +1,5 @@
 Run:
+docker-compose up -d
 
 Playground: https://platform.openai.com/playground
 
