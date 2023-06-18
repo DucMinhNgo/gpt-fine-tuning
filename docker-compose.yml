@@ -2,19 +2,22 @@ version: '3.7'
 
 services:
   server:
+    container_name: server
     build: ./
     ports: 
      - "3000:3000"
     volumes:
     - ./:/app
     restart: unless-stopped
-    container_name: nodejs
     stdin_open: true
     tty: true
     networks: 
       - nodejss
+    environment:
+      - OPENAI_KEY=${OPENAI_KEY}
   
   client:
+    container_name: client
     stdin_open: true
     tty: true
     build:
@@ -25,6 +28,7 @@ services:
       - ./client:/app
     ports:
       - 4000:4000
+   
 
 volumes:
   db:

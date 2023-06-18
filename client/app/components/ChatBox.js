@@ -99,10 +99,10 @@ const ChatBox = ({ collapsed, setCollapsed, isMobile, data, setData}) => {
       })
 
       setData(curr);
-      
+
       const res = await createAnswer({text: currInputData, controller});
 
-      setAnswer(res?.data?.choices[0]?.message?.content);
+      setAnswer(res?.data[0]?.text);
     }
 
     setInputDataSubmit('');

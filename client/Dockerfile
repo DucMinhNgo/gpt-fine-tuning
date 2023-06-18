@@ -11,8 +11,9 @@ RUN apk add --no-cache git \
 
 COPY . .
 
-RUN yarn build
 ENV PORT 4000
 EXPOSE 4000
 
-CMD ["yarn", "start"]
+RUN yarn build
+
+CMD yarn dev

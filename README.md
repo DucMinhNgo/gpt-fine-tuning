@@ -1,5 +1,7 @@
-Run:
-docker-compose up -d
+Run: docker-compose up -d
+
+Server: http://localhost:3000
+Client: http://localhost:4000
 
 Playground: https://platform.openai.com/playground
 
