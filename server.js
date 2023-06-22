@@ -8,9 +8,17 @@ import fetch, { Headers } from 'node-fetch';
 const fsPromises = fs.promises;
 
 const convertJsonToJsonl = async (dataArray, name) => {
-    for (const dataObject of dataArray) {
-        await fsPromises.appendFile( `./file/${name}` , JSON.stringify(dataObject) + "\n");
-    }
+  for (const dataObject of dataArray) {
+    // prepared
+    const dataObjectPrepared = {
+      prompt: `${dataObject.prompt} ->`,
+      completion: `${dataObject.completion} END`
+    };
+
+    console.log(dataObject);
+
+    await fsPromises.appendFile(`./file/${name}`, JSON.stringify(dataObjectPrepared) + "\n");
+  }
 }
 
 dotenv.config()
@@ -69,7 +77,7 @@ app.post('/upload-data', async (req, res) => {
 
   if (query?.url) {
     const myHeaders = new Headers();
-    myHeaders.append('Content-Type','text/plain; charset=UTF-8');
+    myHeaders.append('Content-Type', 'text/plain; charset=UTF-8');
 
     var dataArray = [];
     const urls = query?.url.split(',');
@@ -86,7 +94,7 @@ app.post('/upload-data', async (req, res) => {
 
     console.log(dataArray);
 
-    
+
     await convertJsonToJsonl(dataArray, query?.jsonl_name);
   }
 
@@ -109,12 +117,12 @@ app.post('/upload-data', async (req, res) => {
       res.send('Error!');
     }
   }
-  
+
   upload()
 })
 
 app.post('/create-fine-turning', async (req, res) => {
- const { query } = req; 
+  const { query } = req;
 
   async function createFineTune() {
     try {
@@ -128,7 +136,7 @@ app.post('/create-fine-turning', async (req, res) => {
       res.send('Error!');
     }
   }
-  
+
   createFineTune()
 })
 
