@@ -1,9 +1,10 @@
 Run: docker-compose up -d
 
-Server: http://localhost:3000
-Client: http://localhost:4000
+Server: http://localhost:3001
+Client: http://localhost:3002
 
-Crawl Data: https://colab.research.google.com/drive/1mMzE0CCo8h449hEYZvKPY53jEeTP7LAH?usp=sharing
+Crawl Code: https://colab.research.google.com/drive/1mMzE0CCo8h449hEYZvKPY53jEeTP7LAH?usp=sharingsha
+Crawl Data: https://console.cloud.google.com/storage/browser/hien7613storage2/Crawl_MatBaoWiki;tab=objects?prefix=&forceOnObjectsSortingFiltering=false&pli=1
 
 Playground: https://platform.openai.com/playground
 

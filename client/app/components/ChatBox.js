@@ -49,7 +49,7 @@ const PersonText = ({text}) => {
  * @param {*} param0 
  * @returns 
  */
-const ChatBox = ({ collapsed, setCollapsed, isMobile, data, setData}) => {
+const ChatBox = ({ collapsed, setCollapsed, isMobile, data, setData, modelSelected}) => {
   const [inputData, setInputData] = useState('');
   const [inputDataSubmit, setInputDataSubmit] = useState('');
   const [loading, setLoading] = useState(false);
@@ -100,7 +100,7 @@ const ChatBox = ({ collapsed, setCollapsed, isMobile, data, setData}) => {
 
       setData(curr);
 
-      const res = await createAnswer({text: currInputData, controller});
+      const res = await createAnswer({text: currInputData, controller, modelSelected});
 
       setAnswer(res?.data[0]?.text);
     }
